@@ -44,6 +44,9 @@ jobs:
           labels: |
             org.opencontainers.image.architecture=${{ inputs.os == 'ubuntu-latest' && 'amd64' || 'arm64' }}
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: Build and push container for model ${{ inputs.model }}
         uses: docker/build-push-action@v6
         id: build
