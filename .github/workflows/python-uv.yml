@@ -12,8 +12,8 @@ jobs:
       
       - name: Get history and tags for SCM versioning to work
         run: |
-        git fetch --prune --unshallow
-        git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+          git fetch --prune --unshallow
+          git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
